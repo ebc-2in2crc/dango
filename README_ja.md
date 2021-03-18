@@ -135,6 +135,13 @@ $ go get github.com/ebc-2in2crc/dango/...
 
 - [https://github.com/ebc-2in2crc/dango/releases](https://github.com/ebc-2in2crc/dango/releases)
 
+Homebrew を使うこともできます (Mac のみ)
+
+```
+$ brew tap ebc-2in2crc/tap
+$ brew install dango
+```
+
 ## Contribution
 
 1. Fork this repository
