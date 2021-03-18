@@ -113,6 +113,19 @@ $ dango -help
 # ...
 ```
 
+Docker を使うこともできます。
+
+```
+$ cat << EOF | docker container run --rm --interactive ebc2in2crc/dango
+━
+🟠
+🟡
+🟢
+━
+EOF
+━🟠🟡🟢━
+```
+
 ## Installation
 
 ### Developer
@@ -140,6 +153,12 @@ Homebrew を使うこともできます (Mac のみ)
 ```
 $ brew tap ebc-2in2crc/tap
 $ brew install dango
+```
+
+Docker を使うこともできます。
+
+```
+$ docker image pull ebc2in2crc/dango
 ```
 
 ## Contribution

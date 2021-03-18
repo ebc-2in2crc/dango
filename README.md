@@ -113,6 +113,19 @@ $ dango -help
 # ...
 ```
 
+Or, you can use Docker.
+
+```
+$ cat << EOF | docker container run --rm --interactive ebc2in2crc/dango
+━
+🟠
+🟡
+🟢
+━
+EOF
+━🟠🟡🟢━
+```
+
 ## Installation
 
 ### Developer
@@ -140,6 +153,12 @@ Or, you can use Homebrew (Only macOS).
 ```
 $ brew tap ebc-2in2crc/tap
 $ brew install dango
+```
+
+Or, you can use Docker.
+
+```
+$ docker image pull ebc2in2crc/dango
 ```
 
 ## Contribution
