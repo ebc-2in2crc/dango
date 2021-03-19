@@ -3,6 +3,7 @@
 # 🍡 dango
 
 [![test](https://github.com/ebc-2in2crc/dango/actions/workflows/test.yml/badge.svg)](https://github.com/ebc-2in2crc/dango/actions/workflows/test.yml)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 🍡`dango` is a program that concatenates and splits standard input.
 
