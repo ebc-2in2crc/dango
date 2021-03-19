@@ -4,6 +4,7 @@
 
 [![test](https://github.com/ebc-2in2crc/dango/actions/workflows/test.yml/badge.svg)](https://github.com/ebc-2in2crc/dango/actions/workflows/test.yml)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ebc-2in2crc/dango)](https://goreportcard.com/report/github.com/ebc-2in2crc/dango)
 [![Version](https://img.shields.io/github/release/ebc-2in2crc/dango.svg?label=version)](https://img.shields.io/github/release/ebc-2in2crc/dango.svg?label=version)
 
 🍡`dango` is a program that concatenates and splits standard input.
