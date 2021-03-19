@@ -4,6 +4,7 @@
 
 [![test](https://github.com/ebc-2in2crc/dango/actions/workflows/test.yml/badge.svg)](https://github.com/ebc-2in2crc/dango/actions/workflows/test.yml)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Version](https://img.shields.io/github/release/ebc-2in2crc/dango.svg?label=version)](https://img.shields.io/github/release/ebc-2in2crc/dango.svg?label=version)
 
 🍡 `dango` は標準入力を連結したり分割するプログラムです。
 
