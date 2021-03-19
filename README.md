@@ -2,6 +2,8 @@
 
 # 🍡 dango
 
+[![test](https://github.com/ebc-2in2crc/dango/actions/workflows/test.yml/badge.svg)](https://github.com/ebc-2in2crc/dango/actions/workflows/test.yml)
+
 🍡`dango` is a program that concatenates and splits standard input.
 
 ## Description

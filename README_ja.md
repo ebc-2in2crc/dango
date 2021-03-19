@@ -2,6 +2,8 @@
 
 # 🍡 dango
 
+[![test](https://github.com/ebc-2in2crc/dango/actions/workflows/test.yml/badge.svg)](https://github.com/ebc-2in2crc/dango/actions/workflows/test.yml)
+
 🍡 `dango` は標準入力を連結したり分割するプログラムです。
 
 ## Description
