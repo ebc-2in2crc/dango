@@ -122,7 +122,7 @@ $ dango -help
 Or, you can use Docker.
 
 ```
-$ cat << EOF | docker container run --rm --interactive ebc2in2crc/dango
+$ cat << EOF | docker container run --rm -i ebc2in2crc/dango
 ━
 🟠
 🟡
