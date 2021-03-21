@@ -42,7 +42,7 @@ func init() {
   dango - concatenates or split standard input
 
 USAGE:
-  dango [options]
+  dango [OPTIONS]
 
 DESCRIPTION:
   Concatenates or split standard input.
