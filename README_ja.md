@@ -33,9 +33,12 @@ EOF
 バイト数で連結したり分割する。
 
 ```
-$ echo 'dango' | dango -b -n 3
-dan
-go
+$ echo 'dango' | dango -b -n 1
+d
+a
+n
+g
+o
 
 $ echo 'dango' | dango -b -n 3
 dan
