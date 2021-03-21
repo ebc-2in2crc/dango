@@ -33,83 +33,60 @@ EOF
 Concatenate or split by number of bytes.
 
 ```
-$ echo 'Hello World!' | dango -b -n 1
-H
-e
-l
-l
-o
+$ echo 'dango' | dango -b -n 3
+dan
+go
 
-W
-o
-r
-l
-d
-!
-
-$ echo 'Hello World!' | dango -b -n 5
-Hello
- Worl
-d!
+$ echo 'dango' | dango -b -n 3
+dan
+go
 ```
 
 Concatenate or split by number of characters.
 
 ```
-$ echo '花より団子' | dango -c -n 1
-花
-よ
-り
-団
-子
+$ echo '━🟠🟡🟢━' | dango -c -n 1
+━
+🟠
+🟡
+🟢
+━
 
-$ echo '花より団子' | dango -c -n 3
-花より
-団子
+$ echo '━🟠🟡🟢━' | dango -c -n 3
+━🟠🟡
+🟢━
 ```
 
 Concatenate or split by word count.
 
 ```
-$ echo 'Hello World!' | dango -w -n 1
-Hello
-World!
-
-$ echo 'Hello World!' | dango -w
-HelloWorld!
+$ echo 'Dango is a program that concatenates and splits standard input.' | dango -w -n 2 -d ' '
+Dango is
+a program
+that concatenates
+and splits
+standard input.
 ```
 
 Concatenate or split by the number of line breaks.
 
 ```
-$ cat << EOF | dango -l -n 1
-Hello
-World!
-EOF
-Hello
-World!
+$ seq 1 4 | dango -l -n 2
+12
+34
 
-$ cat << EOF | dango -l
-Hello
-
-World
-
-!
-EOF
-HelloWorld!
+$ seq 1 4 | dango -l
+1234
 ```
 
 Specify a delimiter to concatenate or split.
 
 ```
-$ echo 'abcdefg' | dango -c -d ' '
-a b c d e f g 
+$ echo 'dango' | dango -c -d '-'
+d-a-n-g-o
 
-$ cat << EOF | dango -d ' '
-Hello
-World!
-EOF
-Hello World!
+$ seq 1 4 | dango -l -d ' '
+1 2 3 4
 ```
 
 Show help.
