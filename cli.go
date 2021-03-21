@@ -27,38 +27,33 @@ type dangoOptions = struct {
 var options dangoOptions
 
 func init() {
-	flag.IntVar(&options.maxBufferSize, "B", 0, "Maximum size used to buffer a token")
-	flag.BoolVar(&options.bytes, "b", false, "Concat or split standard input by bytes")
-	flag.BoolVar(&options.characters, "c", false, "Concat or split standard input by characters")
-	flag.StringVar(&options.delimiter, "d", "", "Element delimiter (default \"\")")
-	flag.BoolVar(&options.lines, "l", false, "Concat or split standard input by lines")
-	flag.IntVar(&options.size, "n", 0, "Number of elements in each line")
-	flag.BoolVar(&options.version, "version", false, "Show version")
-	flag.BoolVar(&options.help, "help", false, "Show this help message")
-	flag.BoolVar(&options.words, "w", false, "Concat or split standard input by words")
+	flag.IntVar(&options.maxBufferSize, "B", 0, "Maximum size used to buffer a token.")
+	flag.BoolVar(&options.bytes, "b", false, "Concatenates or split standard input by bytes.")
+	flag.BoolVar(&options.characters, "c", false, "Concatenates or split standard input by characters.")
+	flag.StringVar(&options.delimiter, "d", "", `Element delimiter (default: "")`)
+	flag.BoolVar(&options.lines, "l", false, "Concatenates or split standard input by lines.")
+	flag.IntVar(&options.size, "n", 0, "Number of elements in each line (default: 0)")
+	flag.BoolVar(&options.version, "version", false, "Show version.")
+	flag.BoolVar(&options.help, "help", false, "Show this help message.")
+	flag.BoolVar(&options.words, "w", false, "Concatenates or split standard input by words.")
 
 	flag.Usage = func() {
 		fmt.Printf(`NAME:
-  dango - concat or split standard input
+  dango - concatenates or split standard input
 
 USAGE:
   dango [options]
 
 DESCRIPTION:
-  dango concat or split standard input.
+  Concatenates or split standard input.
 
   e.g.
-    $ cat << EOF | dango -l -n 2
-    first
-    second
-    EOF
-    firstsecond
-
-    $ cat << EOF | dango -w
-    first second
-    EOF
-    first
-    second
+    $ seq 1 4 | dango -l -n 2
+    12
+    34
+    
+    $ seq 1 4 | dango -l
+    1234
 
 OPTIONS:
 `)
