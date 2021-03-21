@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.13
 
 LABEL com.github.ebc-2in2crc.dango.image=https://github.com/ebc-2in2crc/dango.git
 
