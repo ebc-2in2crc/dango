@@ -3,4 +3,5 @@ issues:
 
 linters:
   enable:
+    - gofmt
     - goimports
