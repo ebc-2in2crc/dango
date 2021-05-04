@@ -34,7 +34,7 @@ devel-deps: deps
 	cd $$tmpdir; \
 	$(GOGET) \
 		golang.org/x/tools/cmd/goimports \
-		golang.org/x/lint/golint \
+		github.com/golangci/golangci-lint/cmd/golangci-lint \
 		github.com/Songmu/make2help/cmd/make2help \
 		github.com/mitchellh/gox \
 		github.com/tcnksm/ghr; \
@@ -73,8 +73,7 @@ test: deps
 .PHONY: lint
 ## Lint
 lint: devel-deps
-	go vet ./...
-	golint -set_exit_status ./...
+	golangci-lint run ./...
 
 .PHONY: fmt
 ## Format source codes
