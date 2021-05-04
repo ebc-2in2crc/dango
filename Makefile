@@ -7,6 +7,7 @@ GOINSTALL := $(GOCMD) install
 GOCLEAN := $(GOCMD) clean
 GOTEST := $(GOCMD) test
 GOGET := $(GOCMD) get
+GOFMT := $(GOCMD) fmt
 NAME := dango
 CURRENT := $(shell pwd)
 BUILDDIR := ./build
@@ -33,7 +34,6 @@ devel-deps: deps
 	tmpdir=$$(mktemp -d); \
 	cd $$tmpdir; \
 	$(GOGET) \
-		golang.org/x/tools/cmd/goimports \
 		github.com/golangci/golangci-lint/cmd/golangci-lint \
 		github.com/Songmu/make2help/cmd/make2help \
 		github.com/mitchellh/gox \
@@ -78,7 +78,7 @@ lint: devel-deps
 .PHONY: fmt
 ## Format source codes
 fmt: deps
-	find . -name "*.go" -not -path "./vendor/*" | xargs goimports -w
+	$(GOFMT) ./...
 
 .PHONY: clean
 clean:
