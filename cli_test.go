@@ -31,6 +31,7 @@ func testRun(t *testing.T, params []param) {
 	for _, p := range params {
 		c, outStream, errStream := newCLI(p.stdin)
 		args := strings.Split(" "+p.args, " ")
+		options = dangoOptions{}
 
 		exitCode := c.run(args)
 

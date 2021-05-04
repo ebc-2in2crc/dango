@@ -90,6 +90,5 @@ func (c *cli) run(args []string) int {
 
 func (c *cli) parseFlag(args []string) {
 	os.Args = args
-	options = dangoOptions{}
 	flag.Parse()
 }
