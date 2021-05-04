@@ -12,13 +12,9 @@ NAME := dango
 CURRENT := $(shell pwd)
 BUILDDIR := ./build
 BINDIR := $(BUILDDIR)/bin
-PKGDIR := $(BUILDDIR)/pkg
-DISTDIR := $(BUILDDIR)/dist
 
 VERSION := $(shell git describe --tags --abbrev=0)
 LDFLAGS := -X 'main.version=$(VERSION)'
-GOXOSARCH := "darwin/amd64 darwin/arm64 windows/386 windows/amd64 linux/386 linux/amd64"
-GOXOUTPUT := "$(PKGDIR)/$(NAME)_{{.OS}}_{{.Arch}}/{{.Dir}}"
 
 export GO111MODULE=on
 
@@ -35,8 +31,8 @@ devel-deps: deps
 	cd $$tmpdir; \
 	$(GOGET) \
 		github.com/golangci/golangci-lint/cmd/golangci-lint \
+		github.com/goreleaser/goreleaser \
 		github.com/Songmu/make2help/cmd/make2help \
-		github.com/mitchellh/gox \
 		github.com/tcnksm/ghr; \
 	rm -rf $$tmpdir'
 
@@ -48,22 +44,17 @@ build: deps
 .PHONY: cross-build
 ## Cross build binaries
 cross-build:
-	rm -rf $(PKGDIR)
-	gox -osarch=$(GOXOSARCH) -ldflags "$(LDFLAGS)" -output=$(GOXOUTPUT) .
+	goreleaser build --rm-dist
 
 .PHONY: package
 ## Make package
-package: cross-build
-	rm -rf $(DISTDIR)
-	mkdir $(DISTDIR)
-	pushd $(PKGDIR) > /dev/null && \
-		for P in `ls | xargs basename`; do zip -r $(CURRENT)/$(DISTDIR)/$$P.zip $$P; done && \
-		popd > /dev/null
+package:
+	goreleaser release --snapshot --skip-publish --rm-dist
 
 .PHONY: release
 ## Release package to Github
-release: package
-	ghr $(VERSION) $(DISTDIR)
+release:
+	goreleaser release --rm-dist
 
 .PHONY: test
 ## Run tests
