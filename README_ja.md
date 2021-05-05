@@ -147,6 +147,59 @@ Docker を使うこともできます。
 $ docker image pull ebc2in2crc/dango
 ```
 
+## 🍡dango と他のツールの比較
+
+`dango -l` と `tr`
+
+```
+$ seq 1 4 | dango -l
+1234
+
+$ seq 1 4 | tr -d '\n'
+1234
+```
+
+`dango -w` と `xargs`
+
+```
+$ seq -s ' ' 1 4
+1 2 3 4
+
+$ seq -s ' ' 1 4 | dango -w -n 2 -d ' '
+1 2
+3 4
+
+$ seq -s ' ' 1 4 | xargs -n2
+1 2
+3 4
+```
+
+`dango -c` と `fold`
+
+```
+$ seq -s '' 1 4 | dango -c -n 2
+12
+34
+
+$ seq -s '' 1 4 | fold -w 2
+12
+34
+```
+
+`dango -b` と `fold`
+
+```
+$ seq -s '\t' 1 4 | dango -b -n 3
+1	2
+	3
+4
+
+$ seq -s '\t' 1 4 | fold -b -w 3
+1	2
+	3
+4
+```
+
 ## Contribution
 
 1. Fork this repository
