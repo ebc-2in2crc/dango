@@ -32,8 +32,7 @@ devel-deps: deps
 	$(GOGET) \
 		github.com/golangci/golangci-lint/cmd/golangci-lint \
 		github.com/goreleaser/goreleaser \
-		github.com/Songmu/make2help/cmd/make2help \
-		github.com/tcnksm/ghr; \
+		github.com/Songmu/make2help/cmd/make2help; \
 	rm -rf $$tmpdir'
 
 .PHONY: build
