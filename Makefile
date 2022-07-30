@@ -25,7 +25,7 @@ deps:
 .PHONY: devel-deps
 ## Install dependencies for develop
 devel-deps: deps
-	$(GOINSTALL) github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+	$(GOINSTALL) github.com/golangci/golangci-lint/cmd/golangci-lint@v1.47
 	$(GOINSTALL) github.com/goreleaser/goreleaser@latest
 	$(GOINSTALL) github.com/Songmu/make2help/cmd/make2help@latest
 
