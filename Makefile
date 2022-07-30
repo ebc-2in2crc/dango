@@ -6,7 +6,6 @@ GOBUILD := $(GOCMD) build
 GOINSTALL := $(GOCMD) install
 GOCLEAN := $(GOCMD) clean
 GOTEST := $(GOCMD) test
-GOGET := $(GOCMD) get
 GOFMT := $(GOCMD) fmt
 NAME := dango
 CURRENT := $(shell pwd)
@@ -26,14 +25,9 @@ deps:
 .PHONY: devel-deps
 ## Install dependencies for develop
 devel-deps: deps
-	sh -c '\
-	tmpdir=$$(mktemp -d); \
-	cd $$tmpdir; \
-	$(GOGET) \
-		github.com/golangci/golangci-lint/cmd/golangci-lint \
-		github.com/goreleaser/goreleaser \
-		github.com/Songmu/make2help/cmd/make2help; \
-	rm -rf $$tmpdir'
+	$(GOINSTALL) github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+	$(GOINSTALL) github.com/goreleaser/goreleaser@latest
+	$(GOINSTALL) github.com/Songmu/make2help/cmd/make2help@latest
 
 .PHONY: build
 ## Build binaries
